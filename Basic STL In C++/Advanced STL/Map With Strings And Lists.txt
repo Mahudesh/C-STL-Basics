@@ -1,0 +1,40 @@
+//Map With Strings And Lists
+#include <iostream>
+#include<iterator>
+#include<map>
+#include<list>
+using namespace std;
+
+int main()
+{
+    string character;
+    map<string,list<string>>cricket;
+    cout<<"Enter Dhoni Stats\n";
+    list<string>Dhoni;
+    for(int i=0;i<2;i++)
+    {
+        getline(cin,character);
+        Dhoni.push_back(character);
+    }
+    cout<<"Enter Virat Stats\n";
+    list<string>Virat;
+    for(int i=0;i<2;i++)
+    {
+        getline(cin,character);
+        Virat.push_back(character);
+    }
+    cricket.insert({"Dhoni",Dhoni});
+    cricket.insert({"Virat",Virat});
+    
+    for(auto pair : cricket)
+    {
+        cout<<pair.first<<" - ";
+        for(auto characterr : pair.second)
+        {
+            cout<<characterr<<", ";
+        }
+        cout<<"\n";
+    }
+
+    return 0;
+}

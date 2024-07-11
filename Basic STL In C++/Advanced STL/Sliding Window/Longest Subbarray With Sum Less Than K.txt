@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr={2,5,1,7,10};
+    int k=14;
+    int sum=0;
+    int l=0,r=0;
+    int len=0,maxLen=INT_MIN;
+    int st=l;
+    int end=r;
+    while(r<arr.size())
+    {
+            while(sum+arr[r]>k)
+            {
+                sum-=arr[l];
+                l++;
+            }
+        
+        sum+=arr[r];
+        if(sum<=k)
+        {
+            if(len<=r-l+1)
+            {
+                len=r-l+1;
+                st=l;
+                end=r;
+            }
+        }
+        r++;
+    }
+    for(int  i=st;i<=end;i++)
+    cout<<arr[i]<<" ";
+
+  
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr={2,5,1,10,10};
+    int k=14;
+    int sum=0;
+    int l=0,r=0;
+    int len=0;
+   while(r<arr.size())
+    {
+        sum+=arr[r];
+        //Dont Shrink More Than The Maximum Window Length Obtained
+        //If Window Length = 3 By Adding K If It Violates The Maximum sum
+        //Just Reduce It By One Left Because There Is No Point Of Reason By Shrinking Left Less Than 3
+        //I Need To Find Length Better Than 3 So Dont Shrink It
+           if(sum>k)
+           {
+               sum-=arr[l];
+               l++;
+           }
+        
+        if(sum<=k)
+        {
+            if(len<=r-l+1)
+            {
+                len=r-l+1;
+            }
+        }
+        r++;
+    }
+ cout<<len;
+
+  
+}

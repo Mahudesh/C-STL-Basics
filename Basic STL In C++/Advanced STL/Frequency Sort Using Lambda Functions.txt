@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string frequencySort(string s)
+     {
+        map<char,int>Map;
+        for(char chh : s)
+        {
+            Map[chh]++;
+        }
+        //Sort Using Lambda Function To Reduce Memory Complexity
+        sort(s.begin(),s.end(), [&] (char a,char b)
+        {
+            if(Map[a]!=Map[b])
+            {
+                return Map[a]>Map[b];
+            }
+            else
+            {
+                return a<b;
+            }
+           // return Map[a]>Map[b] || (Map[a]==Map[b] && a<b); // To check if  two frequencies are equal then sort the string in lexographical order
+        });
+         return s;
+   
+    }
+};

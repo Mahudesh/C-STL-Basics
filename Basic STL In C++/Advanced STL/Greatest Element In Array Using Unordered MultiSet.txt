@@ -1,0 +1,37 @@
+#include <iostream>
+#include<bits/stdc++.h>
+#include<iterator>
+
+using namespace std;
+
+// 6 3 9 7 5
+
+int main()
+{
+    unordered_multiset<int>myset;
+    for(int i=1;i<=5;i++)
+    {
+        int a;
+        cin>>a;
+        myset.insert(a);
+    }
+    if(!myset.empty())
+    {
+        auto it=myset.begin(); // Assigning The First Value to thhe Iterator
+        int maxi=*it; // Assigning The First Value To The Variable Using * operator
+        for(it++;it!=myset.end();it++)
+        {
+            if(maxi< *it)
+            {
+                maxi=*it;
+            }
+        }
+        cout<<maxi;
+    }
+    
+    
+    
+    
+
+    return 0;
+}

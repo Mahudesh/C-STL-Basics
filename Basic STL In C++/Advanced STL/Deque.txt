@@ -1,0 +1,39 @@
+Deque:
+
+ Important Functions
+
+1 - push_front()
+2 - push_back()
+3 - pop_front()
+4 - pop_back()
+5 - d.size()
+6 - d.erase(index)
+7 - d.erase()
+
+#include <iostream>
+#include<deque>
+
+using namespace std;
+
+int main()
+{
+    deque<int>d;
+    d.push_front(1);
+    d.push_front(2);
+    d.push_front(3);
+    //output 3 2 1
+    d.push_back(8);
+    d.push_back(9);
+    //output 3 2 1 8 9
+    // for(auto it : d)
+    // {
+    //     cout<<it<<" ";
+    // }
+    d.pop_front();
+    for(auto it : d)
+    {
+        cout<<it<<" ";
+    }
+
+    return 0;
+}

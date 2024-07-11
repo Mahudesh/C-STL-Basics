@@ -1,0 +1,42 @@
+Forward List:
+
+Accessed Via Iterator
+
+Important Functions:
+
+1 - push_front()
+2 - pop_front()
+3 - sort()
+4 - reverse()
+
+#include <iostream>
+#include<iterator>
+#include<forward_list>
+
+using namespace std;
+
+int main()
+{
+    forward_list<int>flist;
+    flist.push_front(10);
+    flist.push_front(20);
+    flist.push_front(30);
+    forward_list<int>::iterator it;
+    // for(it=flist.begin(); it != flist.end();it++)
+    // {
+    //     cout<<*it<<" ";
+    // }
+    // flist.sort();
+    // for(it=flist.begin(); it != flist.end();it++)
+    // {
+    //     cout<<*it<<" ";
+    // }
+    flist.reverse();
+    for(it=flist.begin(); it != flist.end();it++)
+    {
+        cout<<*it<<" ";
+    }
+    
+
+    return 0;
+}

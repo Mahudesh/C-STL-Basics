@@ -1,0 +1,30 @@
+STL:
+
+Types Of Containers:
+
+1 - Sequence Containers (Array, Vector, Deque, Forward List, List) - Accessed With Iterators
+
+	Deque - Doubly Ended Queue - Insert/Delete At First/Last
+
+	List - Access The Elements In Forward/Backward Direction
+
+2 - Container Adaptor(Stack, Queue, Priority Queue) - Does Not Accessed With Iterators
+
+3 - Associative Container(Set, MultiSet, Map, MultiMap) - Accessed With Iterators
+
+    Set - Removes Duplicate Elements,Sorted Order
+
+    MultiSet - Contains Duplicate Elements,Sorted Order
+
+    Map - One Key Maps To One Value
+
+    MultiMap - One Key Maps To More Number Of Values	
+
+
+4 - Unordered Associative(Unordered Set, Unordered Map)
+
+    Unordered Set - Removes Duplicate Elements,Any Order
+
+    Unordered MultiSet - Contains Duplicate Elements,Any Order
+
+	

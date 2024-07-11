@@ -1,0 +1,47 @@
+#include<iostream>
+#include<stack>
+#include<vector>
+using namespace std;
+void span(vector<int>& arr)
+{
+    stack<int>st;
+    st.push(0);
+    cout<<1<<" ";
+    for(int i=1;i<arr.size();i++)
+    {
+        //arr[st.top()]<=arr[i] Remove all the elements which is smaller than the current element in the stack
+        //if all the elements are removed which means the current element is the greatest of all numbers so stack becomes empty and loop fails
+        
+        while(!st.empty() && arr[st.top()]<=arr[i])
+        {
+            st.pop();
+        }
+        int span;
+        //if stack is not empty then the current num is not the greatest element
+        //the first greater element, the second greater element, the third greater element will be stored in the stack alone
+        //100 40 50 60 80 for the current element 80 the stack will stores only 60 and 100
+        //if 60 is not greatest then the numbers which are smaller than 60 is also not to be the greater so remove it
+        if(!st.empty())
+        {
+            cout<<i-st.top()<<" ";
+        }
+        //if stack is empty then it is the greatest element then use i+1 formula
+        else if(st.empty())
+        {
+            cout<<i+1<<" ";
+        }
+        st.push(i);
+    }
+    
+}
+int main()
+{
+    
+    vector<int>arr={100,20,30,60,40,36,55,80,50,120};
+    span(arr);
+    
+    
+}
+
+Time Complexity : O(n)
+Space Complexity : O(n)

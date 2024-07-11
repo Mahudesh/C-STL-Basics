@@ -1,0 +1,71 @@
+Set:
+
+Modification Of Set Is Not Possible.
+
+Important Functions:
+
+1 - insert()
+2 - erase(value)
+3 - find()
+
+	find(value) -> This Function Returns An Iterator To The Element If Found.
+		       Returns myset.end() If Not Found The Element.
+
+    set<int>myset;
+    myset.insert(1);
+    myset.insert(2);
+    myset.insert(2);
+    myset.insert(3);
+    myset.insert(4);
+    myset.insert(5);
+    myset.insert(6);
+
+
+    set<int> :: iterator findit= myset.find(5);
+
+    if(findit!=myset.end())
+
+    	cout<<"Found";
+
+    else
+
+   	 cout<<"Not Found";
+4 - size()
+5 - begin() Returns An Iterator That Points To The First Element Of The Set(Used In For Loops)
+6 - end()
+
+
+	#include <iostream>
+#include<set>
+#include<iterator>
+
+using namespace std;
+
+int main()
+{
+    set<int>myset;
+    myset.insert(1);
+    myset.insert(2);
+    myset.insert(2);
+    myset.insert(3);
+    myset.insert(4);
+    myset.insert(5);
+    myset.insert(6);
+    set<int>::iterator it;
+    set<int> :: iterator findit= myset.find(5);
+    if(findit!=myset.end())
+    cout<<"Found";
+    else
+    cout<<"Not Found";
+    myset.erase(3);
+    for(it=myset.begin(); it!= myset.end(); it++)
+    {
+        cout<<*it<<" ";
+    }
+    return 0;
+    
+    
+    
+
+
+}

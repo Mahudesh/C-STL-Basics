@@ -1,0 +1,29 @@
+#include <iostream>
+#include<map>
+using namespace std;
+
+int main()
+{
+    map<int,string> mymap;
+    //Four Ways Of Inserting A Key Value Pair In Map
+    mymap.insert(pair<int,string>(1,"Mahudesh"));
+    mymap.insert(make_pair(2,"Jeeva"));
+    mymap.insert({3,"KL Rahul"});
+    mymap.insert({4,"M Siraj"});
+    mymap[4]="Jasprit Bumrah";
+    cout<<mymap.size()<<"\n";
+    map<int,string> :: iterator it=mymap.begin();
+   // mymap.erase(4);
+    while(it!=mymap.end())
+    {
+        cout<<it->first<<"  "<<it->second;
+        it++;
+        cout<<"\n";
+    }
+    //Find Function Always Returns An Iterator Pointing To That Position
+    auto newit=mymap.find(3);
+    cout<<newit->second<<"\n";
+    
+
+    return 0;
+}

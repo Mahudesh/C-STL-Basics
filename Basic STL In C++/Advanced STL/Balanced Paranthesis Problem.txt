@@ -1,0 +1,46 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+bool func(string str)
+{
+    
+    stack<char>st;
+    for(int i=0;i<str.length();i++)
+    {
+        if(str[i]=='(' || str[i]=='{' || str[i]=='[')
+        {
+            st.push(str[i]);
+        } 
+        else
+        {
+            //To Handle []{}[ This Kind Of Testcases
+            if(st.empty())
+            {
+                return false;
+             
+            }
+            else if(st.top()=='(' && str[i]==')' || st.top()=='{'&&str[i]=='}' || st.top()=='['&&str[i]==']')
+            {
+                st.pop();
+            }
+            else
+            {
+                return false;
+                
+            }
+        }
+    }
+    if(st.empty())
+    return true;
+    return false;
+}
+int main()
+{
+    string str;
+    cin>>str;
+    if(func(str))
+    cout<<"Valid";
+    else
+    cout<<"Invalid";
+    
+}
