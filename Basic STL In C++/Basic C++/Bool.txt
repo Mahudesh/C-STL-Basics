@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    
+    bool value=true;//false
+    cout<<value;
+return 0;
+}
+

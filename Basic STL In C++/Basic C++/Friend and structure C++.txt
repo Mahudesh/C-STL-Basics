@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+class myclass
+{
+    int x,y;
+    public:
+    void read()
+    {
+        cin>>x>>y;
+    }
+    friend void display(myclass);
+};
+  void display(myclass c)
+  {
+      cout<<c.x<<" "<<c.y;
+  }
+  int main()
+  {
+      myclass m;
+      m.read();
+      display(m);
+  }

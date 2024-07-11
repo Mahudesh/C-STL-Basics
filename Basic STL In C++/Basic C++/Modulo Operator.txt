@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+//Explicit typecasting
+int main()
+{
+   cout<<"1%10="<<1%10<<"\n";
+  // cout<<"2.3%2="<<2.3%2<<"\n";
+   cout<<"-11%5="<<-11%5<<"\n";
+   cout<<"11%-5="<<11%-5<<"\n";
+   
+   
+  return 0;
+}
+
+Output
+
+1%10=1
+-11%5=-1
+11%-5=1

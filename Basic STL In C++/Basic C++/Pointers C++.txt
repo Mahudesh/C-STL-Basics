@@ -1,0 +1,246 @@
+/*
+POINTERS :
+
+int *ip;  //pointer to an integer
+
+double *dp //pointer to an double
+
+float *fp // pointer to an float
+
+& ===> address of operator [Reference variable]
+* ===> Value at operator   [Dereference variable or Indirection operator]
+
+*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num=100;
+    int*ptr;//Pointer Declaration
+    ptr=&num;
+    
+    cout<<num<<endl;
+    cout<<&num<<endl;
+    
+    cout<<ptr<<endl;
+    cout<<*ptr<<endl;
+    cout<<&ptr;
+    
+    *ptr=700;//Updating the value using pointer variable ["Address doesn't change"]
+    
+    return 0;
+}
+
+
+
+
+
+
+2)
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    float num;
+    float*ptr=NULL; //or float*fp=0;
+    ptr=&num;
+      
+    cout<<num<<endl;
+    cout<<&num<<endl;
+    
+    cout<<ptr<<endl;
+    cout<<*ptr<<endl;
+    cout<<&ptr;
+    
+    return 0;
+}
+
+
+
+
+
+
+
+3)
+
+//POINTER ARITHMETIC
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num1=100;
+    int num2=200;
+    int*p1=&num1;
+    int*p2=&num2;
+    
+    cout<<*p1+*p2<<endl;
+    cout<<*p1-*p2<<endl;
+    
+    cout<<p1<<endl;
+    cout<<p1+3<<endl; //(p+[3*no of bytes of variable])
+    
+    //[p1+p2 = ERROR (Points another location)]
+    
+    
+    return 0;
+}
+
+
+
+
+
+
+4)
+
+POINTER USING ARRAY :
+
+#include <iostream>
+using namespace std;
+const int MAX=3;
+
+int main()
+{
+    int var[MAX]={100,200,300};
+    int *ptr;
+    ptr=var;//ptr=&var [ARRAY ==> var { Array acts as a pointer ,so no need "&" }]
+    }
+    
+    for(int i=0;i<MAX;i++)
+    {
+        cout<<ptr<<"\t";
+        cout<<*ptr<<endl;
+        ptr++;
+    }
+    return 0;
+}
+
+                         [OR]
+
+
+
+
+5)
+
+#include <iostream>
+using namespace std;
+const int MAX=3;
+
+int main()
+{
+    int var[MAX]={100,200,300};
+    int *ptr;
+    ptr=var;//ptr=&var [ARRAY ==> var { Array acts as a pointer ,so no need "&" }]
+    
+    cout<<*(ptr)<<endl;
+    cout<<*(ptr+1)<<endl;
+    cout<<*(ptr+2)<<endl;
+    
+    cout<<"--------------------------------------------\n";
+    
+    cout<<*(var)<<endl;
+    cout<<*(var+1)<<endl;
+    cout<<*(var+2)<<endl;
+    
+    cout<<"--------------------------------------------\n";
+    
+    cout<<ptr[0]<<endl;
+    cout<<ptr[1]<<endl;
+    cout<<ptr[2]<<endl;
+    
+    cout<<"--------------------------------------------\n";
+    
+    cout<<var[0]<<endl;
+    cout<<var[1]<<endl;
+    cout<<var[2]<<endl;
+    
+    cout<<"--------------------------------------------\n";
+   
+   /* 
+    for(int i=0;i<MAX;i++)
+    {
+        cout<<ptr<<"\t";
+        cout<<*ptr<<endl;
+        ptr++;
+    }
+    */
+    return 0;
+}
+
+
+
+
+
+
+6)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    //datatype *ptrvar = new datatype
+    
+    int *p=new int;
+    *p=250;
+    cout<<*p<<endl;
+    
+    //datatype *ptrvar = new datatype(value)
+    
+    float *vp=new float(123.097);
+    cout<<endl<<*vp;
+    
+     //datatype *ptrvar = new datatype(size of array)
+     int *arr=new int[5];
+     for(int i=0;i<5;i++)
+     {
+         arr[i]=10*i;
+     }
+     for(int i=0;i<5;i++)
+     {
+         cout<<arr[i]<<endl;
+     }
+     cout<<endl<<*vp;
+    
+    return 0;
+}
+
+
+
+
+7)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    //datatype *ptrvar = new datatype
+    
+    int *p=new int;
+    *p=250;
+    cout<<*p<<endl;
+    
+    //datatype *ptrvar = new datatype(value)
+    
+    float *vp=new float(123.097);
+    cout<<endl<<*vp;
+    
+     //datatype *ptrvar = new datatype(size of array)
+     int *arr=new int[5];
+     for(int i=0;i<5;i++)
+     {
+         arr[i]=10*i;
+     }
+     for(int i=0;i<5;i++)
+     {
+         cout<<arr[i]<<endl;
+     }
+     cout<<endl<<*vp;
+    
+    delete p;
+    delete vp;    //DELETES THE MEMORY INSIDE THE PROGRAM
+    delete[]arr;
+    
+    return 0;
+}

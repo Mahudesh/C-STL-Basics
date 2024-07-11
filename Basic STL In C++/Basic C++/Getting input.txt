@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    
+    int age;
+    float height;
+    cin>>age>>height;
+    cout<<"The age is : "<<age<<"\n"<<"The height is : "<<height;
+    
+    
+    return 0;
+}
+
+
+
+
+//Program for Multiple input
+
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    string name;
+    getline(cin,name);
+    cout<<name;
+    return 0;
+}

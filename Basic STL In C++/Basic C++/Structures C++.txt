@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+struct student
+{
+    int roll,age;
+    char name[25];
+};
+int main()
+{
+   int i;
+    student s[3];
+    for(i=0;i<3;i++)
+    {
+        cout<<"Enter the student "<<i+1<<" Details"<<"\n";
+        cin>>s[i].roll;
+        cin>>s[i].age;
+        cin>>s[i].name;
+    }
+    cout<<"Student details"<<"\n";
+    
+       for(i=0;i<3;i++)
+       {
+           cout<<s[i].roll<<"\n";
+           cout<<s[i].age<<"\n";
+           cout<<s[i].name<<"\n";
+       }
+    
+}

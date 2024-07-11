@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    
+    int emp_id=101;
+    char gender='M';
+    string name="Mahudesh";
+    cout<<emp_id<<"\n "<<gender<<" \n"<<name;
+return 0;
+}

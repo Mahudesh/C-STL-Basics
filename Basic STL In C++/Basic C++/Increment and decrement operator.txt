@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+//Post increment
+int main()
+{
+  int x=10,y;
+  y=x++;
+  cout<<"x="<<x<<"y="<<y;
+  
+/*  Output
+x=11y=10*/
+   
+   
+  return 0;
+}
+
+
+//Pre increment
+#include<iostream>
+using namespace std;
+int main()
+{
+  int x=10,y;
+  y=++x;
+  cout<<"x="<<x<<"y="<<y;
+
+   
+   
+ /*  Output
+x=11y=11*/
+  return 0;
+}
+
+//post decrement
+
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+  int x=10,y;
+  y=x--;
+  cout<<"x="<<x<<"y="<<y;
+
+   
+
+/*Output
+x=9y=10*/
+  return 0;
+}
+
+
+//Pre decrement
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+  int x=10,y;
+  y=--x;
+  cout<<"x="<<x<<"y="<<y;
+
+ /*  Output
+x=9y=9*/
+
+
+  return 0;
+}

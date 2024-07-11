@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+  int i,start,end;
+  cin>>start>>end;
+  i=start;//Initialization
+  while(i<=end)//Condition
+  {
+      if(i%2==0)
+      {
+          cout<<i<<"\n";
+      }
+      i++;//Update
+  }
+  
+        return 0;
+}

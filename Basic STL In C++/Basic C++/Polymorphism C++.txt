@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+class ope
+{
+    int a,b;
+    public:
+    ope()
+    {
+        cout<<"Enter a value: ";
+        cin>>a;
+    }
+    void operator+()
+    {
+        cin>>a>>b;
+        cout<<a+b;
+    }
+};
+int main()
+{
+    ope o;
+    +o;
+}
