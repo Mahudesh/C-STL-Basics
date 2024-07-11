@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    stack<int>st;
+    vector<int>arr={40,30,20,10};
+    st.push(0);
+    cout<<-1<<" ";
+    for(int i=1;i<arr.size();i++)
+    {
+        while(!st.empty() && arr[st.top()]<=arr[i])
+        {
+            st.pop();
+        }
+        if(st.empty())
+        cout<<-1<<" ";
+        else
+        {
+            cout<<arr[st.top()]<<" ";
+        }
+        st.push(i);
+    }
+}

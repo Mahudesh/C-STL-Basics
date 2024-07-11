@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+void evaluate(string exp)
+{
+    stack<int>st;
+    //if there is no space in input between characters then dont use stringstream and dont use getline() function
+    stringstream ss(exp);
+    string ch;
+    //if there is no space then run a for loop
+    while(ss >> ch)
+    {
+        //if there is no space use str[i]
+        if(isdigit(ch[0]))
+        {
+            //if there is no space then convert str[i] character to integer by st.push(str[i]-'0')
+            st.push(stoi(ch));
+        }
+        else
+        {
+            int a=st.top();
+            st.pop(); 
+            int b=st.top();
+            st.pop();
+            int result=0;
+            if(ch[0]=='+')
+            {
+                result=b+a;
+            }
+            else if(ch[0]=='-')
+            {
+                result=b-a;
+            }
+            else if(ch[0]=='*')
+            {
+                result=b*a;
+            }
+            else if(ch[0]=='/')
+            {
+                result=b/a;
+            }
+            st.push(result);
+            
+        }
+    }
+    cout<<st.top();
+}
+int main()
+{
+    string s;
+    //use getline() function if there are spaces present in the given string between characters
+    getline(cin,s);
+    evaluate(s);
+}

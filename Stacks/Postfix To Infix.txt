@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool checkoperand(char ch)
+{
+    if(ch>='a'&&ch<='z' || ch>='A'&&ch<='Z')
+    return true;
+    return false;
+}
+void postfixtoinfix(string str)
+{
+    stack<string>st;
+    for(int i=0;i<str.length();i++)
+    {
+        if(checkoperand(str[i]))
+        {
+            //used to convert a character to a string
+            //There is a constructor in string class which creates string with specified length and content
+            // 1 indicates length of string and str[i] indicates the character
+            //push the string to the stack
+            string s(1,str[i]);
+            st.push(s);
+        }
+        else
+        {
+            string op1=st.top();
+            st.pop();
+            string op2=st.top();
+            st.pop();
+            string result="(" + op2 + str[i] + op1 + ")";
+            st.push(result);
+        }
+    }
+    cout<<st.top();
+}
+int main()
+{
+    string str;
+    cin>>str;
+    postfixtoinfix(str);
+}

@@ -1,0 +1,84 @@
+#include<bits/stdc++.h>
+using namespace std;
+int findhistogramarea(vector<int>& arr)
+       { 
+           int res=0;
+           stack<int>st;
+           st.push(0);
+           vector<int>prevsmaller(arr.size(),-1);
+           vector<int>nextsmaller(arr.size(),arr.size());
+           //find prevsmaller elements
+           for(int i=1;i<arr.size();i++)
+           {
+               while(!st.empty() && arr[st.top()]>=arr[i])
+               {
+                   st.pop();
+               }
+              
+                if(!st.empty())
+               {
+                   prevsmaller[i]=st.top();
+               }
+               st.push(i);
+           }
+           //empty the stack
+           while(!st.empty())
+           {
+               st.pop();
+           }
+           //find nextsmaller ements
+           st.push(arr.size()-1);
+           for(int i=arr.size()-2;i>=0;i--)
+           {
+               while(!st.empty() && arr[st.top()]>=arr[i])
+               {
+                   st.pop();
+               }
+               if(!st.empty())
+               {
+                   nextsmaller[i]=st.top();
+               }
+               st.push(i);
+           }
+           //find the area by adding prevsmaller elements and nextsmaller elements
+           for(int i=0;i<arr.size();i++)
+           {
+               int area=arr[i];
+               area=area+(i-prevsmaller[i]-1)*arr[i];
+               area=area+(nextsmaller[i]-i-1)*arr[i];
+               res=max(res,area);
+           }
+           return res;
+
+       }
+int main()
+{
+    vector<vector<char>> matrix={
+        {'1','0','1','0','0'},
+        {'1','0','1','1','1'},
+        {'1','1','1','1','1'},
+        {'1','0','0','1','0'}
+    };
+       //convert this char matrix matrix to int matrix
+        int r=matrix.size();
+        int c=matrix[0].size();
+        vector<vector<int>>arr(r,vector<int>(c));
+        for(int i=0;i<matrix.size();i++)
+        {
+            for(int j=0;j<matrix[0].size();j++)
+            {
+                arr[i][j]=matrix[i][j]-'0';
+            }
+        }
+        int area=findhistogramarea(arr[0]);
+        for(int i=1;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                if(arr[i][j]==1)
+                arr[i][j]=arr[i][j]+arr[i-1][j];
+            }
+            area=max(area,findhistogramarea(arr[i]));
+        }
+        cout<< area;
+}

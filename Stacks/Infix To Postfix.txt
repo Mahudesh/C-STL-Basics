@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+using namespace std;
+string ans="";
+int precedence(char ch)
+{
+    if(ch=='+' || ch=='-')
+    return 1;
+    else if(ch=='*' || ch=='/')
+    return 2;
+    else if(ch=='^')
+    return 3;
+    else
+    return -1;
+}
+bool checkoperand(char ch)
+{
+    if((ch>='a'&&ch<='z') || (ch>='A'&&ch<='Z'))
+    return true;
+    return false;
+}
+void infixtopostfix(string str)
+{
+    
+    stack<char>st;
+  //  string ans="";
+    for(int i=0;i<str.length();i++)
+    {
+        if(checkoperand(str[i]))
+        {
+            ans=ans+str[i];
+        }
+        else if(str[i]=='(')
+        {
+            st.push(str[i]);
+        }
+        else if(str[i]==')')
+        {
+            //append all the elements untill unless st.top() reaches '('
+            //also dont append the brackets leave it
+            while(!st.empty() && st.top()!='(')
+            {
+                ans=ans+st.top();
+                st.pop();
+            }
+            //if '(' does not reached then it is invalid expression
+            if(!st.empty() && st.top()!='(')
+            return;
+            //pop the '(' opening bracket too
+            else
+            {
+                st.pop();
+            }
+        }
+        else
+        {
+            //pop when the scanning character has lower precedence than s.top() character and also append it to ans
+            while(!st.empty() && precedence(str[i])<=precedence(st.top()))
+            {
+                ans=ans+st.top();
+                st.pop();
+            }
+            //push the scanned operator after doing precedence priority operations
+            st.push(str[i]);
+        }
+    }
+    //after performing all the operations, if there are any character in stack then append it to ans
+    while(!st.empty())
+    {
+        ans=ans+st.top();
+        st.pop();
+    }
+    cout<<ans;
+}
+int main()
+{
+    string str;
+    cin>>str;
+    infixtopostfix(str);
+    
+}
