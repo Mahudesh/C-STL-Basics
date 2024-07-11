@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int power(int base,int num)
+{
+    if(num==1)
+    {
+        return base;
+    }
+    return base*power(base,num-1);
+}
+int main()
+{
+    int base=2,num=7;
+    cout<<power(base,num);
+}

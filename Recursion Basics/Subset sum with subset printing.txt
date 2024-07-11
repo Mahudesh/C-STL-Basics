@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+int c=0;
+void subarraysum(vector<int>&arr,int ind,int sum,int target,vector<int>&temp,vector<vector<int>>&ans,vector<int>&sums)
+{
+    if(ind==arr.size())
+    {
+        if(sum==target)
+        {
+        sums.push_back(sum);
+        ans.push_back(temp);
+        }
+        return;
+    }
+    subarraysum(arr,ind+1,sum,target,temp,ans,sums);
+    
+    temp.push_back(arr[ind]);
+    
+    subarraysum(arr,ind+1,sum+arr[ind],target,temp,ans,sums);
+    
+    temp.pop_back();
+}
+int main()
+{
+    vector<int>arr={1,3,5,2};
+    int target=6;
+    vector<int>temp;
+    vector<int>sums;
+    vector<vector<int>>ans;
+    subarraysum(arr,0,0,target,temp,ans,sums);
+    int k=0;
+    for(auto it1 : ans)
+    {
+        for(auto it2 : it1)
+        {
+            cout<<it2<<",";
+        }
+        cout<<" - "<<sums[k++]<<"\n";
+    }
+    
+  
+}

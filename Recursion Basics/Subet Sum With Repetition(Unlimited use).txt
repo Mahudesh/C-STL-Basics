@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int perfectsum(vector<int>&arr,int ind,int sum)
+{
+    //If sum attains 0 then subset containing required sum is there
+    if(sum==0)
+    return 1;
+    //If we are repeatedly using one number and does not increment the index value and once a stage it will reach negative value
+    //It iindicates that there is no sum is present
+    else if(sum<0)
+    return 0;
+    //If sum has some greater value then the index also reaches the end then we can conclude that sum is not present in the subset
+    if(ind==arr.size())
+    return 0;
+   return  perfectsum(arr,ind+1,sum) + perfectsum(arr,ind,sum-arr[ind]);
+}
+int main()
+{
+    vector<int>arr={2,3,4};
+    cout<<perfectsum(arr,0,6);
+}

@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int climbingstairs(int n)
+{
+    if(n==1)
+    return 1;
+    else if(n==2)
+    return 2;
+    return climbingstairs(n-1)+climbingstairs(n-2);
+}
+int main()
+{
+    int n=5;
+   cout<<climbingstairs(n);
+}

@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+void permute(string str,int ind,vector<string>&ans)
+{
+    if(ind==str.length())
+    {
+        ans.push_back(str);
+        return;
+    }
+    for(int j=ind;j<str.length();j++)
+    {
+        swap(str[j],str[ind]);
+        permute(str,ind+1,ans);
+        swap(str[j],str[ind]);
+    }
+}
+int main()
+{
+    string str="abc";
+    vector<string>ans;
+    permute(str,0,ans);
+    for(auto i : ans)
+    {
+        cout<<i<<"\n";
+    }
+}

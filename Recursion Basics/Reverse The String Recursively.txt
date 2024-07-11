@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+string reversestring(string str,int i,string ans)
+{
+    if(i==-1)
+    return ans;
+ 
+    return reversestring(str,i-1,ans+=str[i]);
+}
+int main()
+{
+    string str;
+    cin>>str;
+    cout<<reversestring(str,str.length()-1,"");
+   
+}

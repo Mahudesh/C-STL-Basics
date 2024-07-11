@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int findminimum(vector<int>& arr,int i)
+{
+    if(i==arr.size()-1)
+    return arr[i];
+    return min(arr[i] , findminimum(arr,i+1));
+}
+int main()
+{
+    vector<int>arr={4,2,1,5,7,8,3};
+    cout<<findminimum(arr,0);
+} 
