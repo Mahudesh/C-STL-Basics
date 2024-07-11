@@ -1,0 +1,16 @@
+//Program to convert Decimal to Binary Conversion
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,r,sum=0;
+    cout<<"Enter the decimal number : ";
+    cin>>n;
+    while(n>0)
+    {
+       r=n%2;//For getting remainders
+       sum=sum*10+r;//For collecting the remainders
+       n=n/2;//For getting the quotients
+    }
+    cout<<"The binary number is : "<<sum;
+}

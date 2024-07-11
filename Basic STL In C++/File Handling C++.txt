@@ -1,0 +1,22 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+/*int main()
+{
+    ofstream f("new.txt");
+    int a;
+    cin>>a;
+    f<<a<<"\n";
+    f<<"Welcome to C++"<<"\n";
+    f<<"Hello world";
+    f.close();
+}*/
+int main()
+{
+    string srg;
+    ifstream filestream("new.txt");
+    while(getline(filestream,srg))
+    {
+        cout<<srg<<"\n";
+    }
+}

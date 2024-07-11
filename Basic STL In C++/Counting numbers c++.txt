@@ -1,0 +1,17 @@
+//Program to count the numbers
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,count=0;
+    cout<<"Enter the number :";
+    cin>>n;
+    while(n>0)
+    {
+        
+        //Do not give n modulo 10 because it will give you only last digit which will leads to mistake in count
+        n=n/10;
+        count++;
+    }
+    cout<<"The count is : "<<count;
+}

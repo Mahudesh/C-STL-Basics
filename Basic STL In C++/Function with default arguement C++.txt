@@ -1,0 +1,17 @@
+Function By Default :
+
+1)
+
+#include<iostream>
+using namespace std;
+int sum(int x,int y,int z=1000)
+{
+    return(x+y+z);
+}
+int main()
+{
+    int a=10,b=20,c;
+    c=sum(a,b);
+    cout<<c;
+    return 0;
+}

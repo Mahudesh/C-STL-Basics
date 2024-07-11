@@ -1,0 +1,13 @@
+//Program to print Hello world without using semi colon
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n;
+  for(n=0;n<1;cout<<"Hello World")
+  {
+      n++;
+  }
+}

@@ -1,0 +1,124 @@
+// To remove Duplicate elements and print in sorted in sorted order 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int> arr(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+ set <int>myset;
+    for(int i=0;i<n;i++)
+    {
+        myset.insert({arr[i]});
+    }
+    for (auto v : myset)
+    cout<<v<<" ";
+    
+    return 0;
+}
+
+// To remove duplicate elements and print in given order
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    reverse(arr.begin(),arr.end());
+ unordered_set <int>myset;
+    for(int i=0;i<n;i++)
+    {
+        myset.insert(arr[i]);
+    }
+    for (auto v : myset)
+    cout<<v<<" ";
+    
+    return 0;
+}
+
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<vector<int>> arr(n, vector<int>(n));
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+ set <int>myset;
+    for(auto it1 :arr)
+    {
+        for(auto it2 : it1)
+        {
+            myset.insert(it2);
+        }
+    }
+    for(auto v :myset)
+    cout<<v<<" ";
+    
+    return 0;
+}
+
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<vector<int>> arr(n, vector<int>(n));
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+ set <int>myset;
+    for(auto it1 :arr)
+    {
+        for(auto it2 : it1)
+        {
+            myset.insert(it2);
+        }
+    }
+    for(auto v :myset)
+    cout<<v<<" ";
+    
+    return 0;
+}
+
+
+

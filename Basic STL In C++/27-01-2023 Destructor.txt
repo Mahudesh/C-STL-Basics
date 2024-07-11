@@ -1,0 +1,47 @@
+Destructor:
+	- Destroying block of the program
+	- Should have same name as class name
+	- Always public
+	- Special type of function that does have return value
+	- Invoked at the end of the program
+	- Represented by the symbol tidle (~)
+	- Always empty
+
+//Program to Demonstrate Destructor
+#include<iostream.h>
+#include<conio.h>
+class add
+{
+int a,b,c;
+public:
+add(int x, int y)
+{
+a=x;
+b=y;
+}
+void result()
+{
+c=a+b;
+cout<<"\nThe Sum is :"<<c;
+}
+~add()
+{
+cout<<"\nDestructor is Called";
+}
+void display()
+{
+c=a*b;
+cout<<"\nThe Product is : "<<c;
+}
+};
+void main()
+{
+int a,b;
+clrscr();
+cout<<"\nEnter two values :\n";
+cin>>a>>b;
+add ad(a,b);
+ad.result();
+ad.display();
+getch();
+}

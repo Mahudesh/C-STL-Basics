@@ -1,0 +1,20 @@
+//Program to convert binary to decimal number
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n,r,sum=0,power=0;
+    cout<<"Enter the binary number : ";
+    cin>>n;
+    while(n>0)
+    {
+        r=n%10;
+        sum=sum+r*pow(2,power);//Manually converting
+        n=n/10;
+        power++;
+        
+    }
+    cout<<"The decimal Number is : "<<sum;
+}

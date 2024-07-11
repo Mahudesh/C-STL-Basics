@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,r;
+    cout<<"\nEnter the Number : ";
+    cin>>n;
+    if(n%2==0)
+    {
+        cout<<"\n"<<n<<" is a an even number";
+    }
+    else
+    {
+        cout<<"\n"<<n<<" is not an even number";
+    }
+}

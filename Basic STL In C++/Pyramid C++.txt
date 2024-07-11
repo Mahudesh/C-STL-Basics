@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,j,sp,n,n1;
+    cin>>n;
+    n1=n;
+    for(i=1;i<=2*n;i=i+2)
+    {
+        for(sp=n1;sp>=0;sp--)
+        
+        {
+            cout<<" ";
+        }
+        for(j=1;j<=i;j++)
+        {
+            cout<<"*";
+        }
+        cout<<"\n";
+        n1--;
+    }    
+   
+        
+}

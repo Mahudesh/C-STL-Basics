@@ -1,0 +1,18 @@
+//Program to demonstrate multiplication table
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i=1,p=0,n,lim;
+    cout<<"\nEnter the Multiplication Table : ";
+    cin>>n;
+    cout<<"\nEnter the limit : ";
+    cin>>lim;
+    cout<<"\nThe Multiplication table of "<<n<<" is";
+    while(i<=lim)
+    {
+        p=n*i;
+        cout<<"\n"<<i<<"*"<<n<<"="<<p;
+        i++;
+    }
+}

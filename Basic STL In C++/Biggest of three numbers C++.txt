@@ -1,0 +1,27 @@
+//Program to find biggest of three numbers without using relational operators
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,c,ab,ac,bc;
+    cout<<"Enter 3 values";
+    cin>>a>>b>>c;
+    ab=a-b;
+    ac=a-c;
+    bc=b-c;
+    ab=ab>>-1;
+    ac=ac>>-1;
+    bc=bc>>-1;
+    if(!ab&&!ac)
+    {
+        cout<<"A is Bigger";
+    }
+    else if(bc)
+    {
+        cout<<"C is Bigger";
+    }
+    else
+    {
+        cout<<"b is Bigger";
+    }
+}

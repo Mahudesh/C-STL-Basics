@@ -1,0 +1,28 @@
+//Program to print Floyd Triangle
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,j,print=0,n;
+    cout<<"Enter the limit : ";
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            print++;
+            if(print%2==0)
+            {
+                cout<<"0";
+            }
+            else
+            {
+                cout<<"1";
+            }
+            
+        }
+        cout<<"\n";
+
+        
+    }
+}

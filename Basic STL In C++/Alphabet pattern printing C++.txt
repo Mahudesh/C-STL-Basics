@@ -1,0 +1,19 @@
+//Program to print the alphabets patterns
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,i,j;
+    char print=64;//print is for prnting character by ASCII Value//
+    cout<<"Enter the limit : ";
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            print++;
+            cout<< char(print);
+        }
+        cout<<"\n";
+    }
+}

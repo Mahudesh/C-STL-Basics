@@ -1,0 +1,14 @@
+//Program to demonstrate sum of n natural numbers
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,sum=0,i;
+    cout<<"\nEnter the number of terms : ";
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        sum=sum+i;
+    }
+    cout<<"The sum is "<<sum;
+}

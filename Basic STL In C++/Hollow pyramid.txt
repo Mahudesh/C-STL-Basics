@@ -1,0 +1,29 @@
+//Program for hollow square
+#include<iostream>
+using namespace std;
+int main()
+{
+   int i,j,sp,n1,n;
+   cin>>n;
+   n1=n;
+   for(i=1;i<=n*2;i=i+2)
+   {
+       for(sp=n1;sp>=0;sp--)
+       {
+           cout<<" ";
+       }
+       for(j=1;j<=i;j++)
+       {
+          if(i==1 || i==(n*2)-1 ||j==1||j==i)
+          {
+              cout<<"*";
+          }
+          else
+          {
+              cout<<" ";
+          }
+       }
+       cout<<"\n";
+       n1--;
+   }
+}

@@ -1,0 +1,17 @@
+//Program for star printing pattern
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,i,j;
+    cout<<"Enter the limit : ";
+    cin>>n;
+    for(i=1;i<=n;++i)//For rows
+    {
+        for(j=1;j<=i;++j)//For how many elements in a row which is controlled by above i loop
+        {
+            cout<<"*";
+        }
+        cout<<"\n";//For next line
+    }
+}
